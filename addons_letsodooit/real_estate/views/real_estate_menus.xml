@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Real Estate"
+        id="real_estate_menu_root"
+        sequence="140"
+        web_icon="mrp,static/description/icon.png"
+        groups="real_estate.group_real_estate_user"/>
+
+    <menuitem name="Properties &amp; Buildings"
+        id="real_estate_properties_menu"
+        parent="real_estate_menu_root"
+        sequence="1"/>
+
+    <menuitem name="Property"
+        id="real_estate_buildings_menu"
+        parent="real_estate_properties_menu"
+        sequence="1"
+        action="real_estate_building_action"/>
+
+    <menuitem name="Buildings"
+        id="real_estate_units_menu"
+        parent="real_estate_properties_menu"
+        sequence="2"
+        action="real_estate_building_unit_action"/>
+
+    <menuitem name="Units"
+        id="real_estate_subunits_menu"
+        parent="real_estate_properties_menu"
+        sequence="3"
+        action="real_estate_building_subunit_action"/>
+
+    <menuitem name="Configuration"
+        id="real_estate_configuration_menu"
+        parent="real_estate_menu_root"
+        groups="real_estate.group_real_estate_manager"
+        sequence="2"/>
+
+    <menuitem name="Property Types"
+        id="real_estate_building_types_menu"
+        parent="real_estate_configuration_menu"
+        sequence="1"
+        action="real_estate_building_type_action"/>
+
+    <menuitem name="Building Types"
+        id="real_estate_building_unit_types_menu"
+        parent="real_estate_configuration_menu"
+        sequence="2"
+        action="real_estate_building_unit_type_action"/>
+
+    <menuitem name="Building Unit Types"
+        id="real_estate_building_subunit_types_menu"
+        parent="real_estate_configuration_menu"
+        sequence="3"
+        action="real_estate_building_subunit_type_action"/>
+
+    <menuitem name="Heating Types"
+        id="real_estate_building_heating_types_menu"
+        parent="real_estate_configuration_menu"
+        sequence="4"
+        action="real_estate_building_heating_type_action"/>
+
+    <menuitem name="Level of Retrofit"
+        id="real_estate_building_levels_of_retrofit_menu"
+        parent="real_estate_configuration_menu"
+        sequence="5"
+        action="real_estate_building_level_of_retrofit_action"/>
+
+</odoo>

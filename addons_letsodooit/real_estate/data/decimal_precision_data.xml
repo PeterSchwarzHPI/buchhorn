@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record forcecreate="True" id="decimal_area" model="decimal.precision">
+            <field name="name">Area</field>
+            <field name="digits">2</field>
+        </record>
+        <record forcecreate="True" id="decimal_room_count" model="decimal.precision">
+            <field name="name">Room Count</field>
+            <field name="digits">1</field>
+        </record>
+    </data>
+</odoo>

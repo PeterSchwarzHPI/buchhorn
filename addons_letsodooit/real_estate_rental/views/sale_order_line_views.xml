@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="sale_order_line_gantt_view" model="ir.ui.view">
+        <field name="name">sale.order.line.gantt</field>
+        <field name="model">sale.order.line</field>
+        <field name="arch" type="xml">
+            <gantt
+                date_start="date_order"
+                date_stop="end_date"
+                color="product_id"
+                default_scale="year"
+                string="Availability"
+            />
+        </field>
+    </record>
+    <record id="action_sale_order_line_gantt" model="ir.actions.act_window">
+        <field name="name">Availability</field>
+        <field name="res_model">sale.order.line</field>
+        <field name="view_mode">gantt</field>
+        <field name="context">{'search_default_product': 1}</field>
+        <field name="domain">[('order_id.state', '=', 'sale'), ('product_id.recurring_invoice', '=', True)]</field>
+        <field name="view_id" ref="sale_order_line_gantt_view"/>
+    </record>
+    <menuitem id="sale_order_line_availability_menu"
+        name="Availability"
+        action="action_sale_order_line_gantt"
+        parent="sale_subscription.menu_sale_subscription_root"
+        sequence="5"
+    />
+</odoo>

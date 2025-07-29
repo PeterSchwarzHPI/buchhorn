@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="analytic_plan_real_estate_buildings" model="account.analytic.plan">
+            <field name="name">Buildings</field>
+            <field name="default_applicability">optional</field>
+        </record>
+        <record id="analytic_plan_real_estate_units" model="account.analytic.plan">
+            <field name="name">Units</field>
+            <field name="default_applicability">optional</field>
+        </record>
+        <record id="analytic_plan_real_estate_subunits" model="account.analytic.plan">
+            <field name="name">Subunits</field>
+            <field name="default_applicability">optional</field>
+        </record>
+    </data>
+</odoo>

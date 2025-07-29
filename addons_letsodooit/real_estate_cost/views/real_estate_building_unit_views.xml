@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="real_estate_building_unit_view_form" model="ir.ui.view">
+        <field name="name">real.estate.building.unit.view.form.cost</field>
+        <field name="model">real.estate.building.unit</field>
+        <field name="inherit_id" ref="real_estate.real_estate_building_unit_view_form"/>
+        <field name="arch" type="xml">
+            <page name="subunits" position="after">
+                <page string="Costs">
+                    <group>
+                        <group string="Cost">
+                            <field name="currency_id" invisible="1"/>
+                            <field name="cost"/>
+                            <field name="cost_per_sqm"/>
+                        </group>
+                        <group/>
+                        <group string="Rental Cost">
+                            <field name="rental_cost"/>
+                            <field name="rental_cost_per_sqm"/>
+                        </group>
+                        <group string="Heating Cost">
+                            <field name="heating_cost"/>
+                            <field name="heating_cost_per_sqm"/>
+                        </group>
+                        <group string="Electricity Cost">
+                            <field name="electricity_cost"/>
+                            <field name="electricity_cost_per_sqm"/>
+                        </group>
+                        <group string="Additional Cost">
+                            <field name="additional_cost"/>
+                            <field name="additional_cost_per_sqm"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+            <field name="unit_type" position="after">
+                <field name="cost"/>
+                <field name="cost_per_sqm"/>
+            </field>
+        </field>
+    </record>
+    <record id="real_estate_building_unit_view_list" model="ir.ui.view">
+        <field name="name">real.estate.building.unit.view.list.cost</field>
+        <field name="model">real.estate.building.unit</field>
+        <field name="inherit_id" ref="real_estate.real_estate_building_unit_view_list"/>
+        <field name="arch" type="xml">
+            <field name="subunit_count" position="after">
+                <field name="cost"/>
+                <field name="cost_per_sqm"/>
+            </field>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <record id="real_estate_building_unit_view_form" model="ir.ui.view">
+        <field name="name">real.estate.building.unit.view.form</field>
+        <field name="model">real.estate.building.unit</field>
+        <field name="arch" type="xml">
+            <form string="Building">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="street"/>
+                            <field name="zip"/>
+                            <field name="city"/>
+                            <field name="building_id" options="{'no_create': True}"/>
+                            <field name="year_of_construction"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="unit_type"/>
+                            <field name="building_type"/>
+                            <field name="level_of_retrofit"/>
+                            <field name="heating_type"/>
+                            <field name="subunit_count"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="General Information" name="general">
+                            <group>
+                                <group>
+                                    <field name="number_of_floors"/>
+                                    <field name="number_of_windows"/>
+                                    <field name="number_of_cellar_rooms"/>
+                                    <field name="has_elevator"/>
+                                    <field name="has_monument_protection"/>
+                                </group>
+                                <group>
+                                    <field name="building_area"/>
+                                    <field name="sealed_area"/>
+                                    <field name="roof_area"/>
+                                    <field name="window_area"/>
+                                    <field name="corridor_area"/>
+                                    <field name="gross_area"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Subunits" name="subunits">
+                            <field name="subunit_ids">
+                                <list create="0">
+                                    <field name="name"/>
+                                    <field name="subunit_type"/>
+                                    <field name="owner_id"/>
+                                    <field name="currency_id" column_invisible="1"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Images" name="images">
+                            <field name="image_ids">
+                                <list>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="image_128" string="Images" widget="image" nolabel="1"/>
+                                </list>
+                                <form>
+                                    <field name="image_1920"/>
+                                </form>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="real_estate_building_unit_view_list" model="ir.ui.view">
+        <field name="name">real.estate.building.unit.view.list</field>
+        <field name="model">real.estate.building.unit</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="building_id"/>
+                <field name="name"/>
+                <field name="heating_type"/>
+                <field name="subunit_count"/>
+                <field name="currency_id" column_invisible="1"/>
+            </list>
+        </field>
+    </record>
+    <record id="real_estate_building_unit_action" model="ir.actions.act_window">
+        <field name="name">Building</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.building.unit</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

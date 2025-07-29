@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="seq_real_estate_account_debitor" model="ir.sequence">
+        <field name="name">Real Estate Account Debitor</field>
+        <field name="code">real.estate.debitor</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+    <record id="seq_real_estate_account_creditor" model="ir.sequence">
+        <field name="name">Real Estate Account Creditor</field>
+        <field name="code">real.estate.creditor</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+
+</odoo>
